@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">  
+    <link rel="stylesheet" type="text/css" href="style.css">
     
     <title>Homework 3</title>
 </head>
     <body>
 
            
-        
+            
         
         <div class="container">
             <H1> Password Generator</H1>
@@ -22,14 +22,26 @@
                             <h2>Generate a Password</h2>
                             <input type="text" id="display">
                             <button onclick="Generate()">Generate Password</button>
-                            <button onclick="copyPassword()">Copy to Clipboard</button>
+                            <button onclick="myFunction()">Copy to Clipboard</button>
                         </div>
                     </div>
                 </div>
         </div>
+        
 
-        <script  src="script.js">
-        </script>
+<script>
+function myFunction() {
+        var copyText = document.getElementById("display");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999)
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+      }
+
+</script>
+       
+
+        <script  src="script.js"></script>
         
         
     </body>
