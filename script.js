@@ -9,7 +9,25 @@ function Generate (){
     var lowercase = confirm("Would you like to use lowercase characters in your password?");
     var uppercase = confirm("Would you like to use uppercase characters in your password?");
 
-    let values= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
+    let valuesspecialchars= "!@#$%^&*()_+";
+    let valuesnumchars= "1234567890";
+    let valueslowercase= "abcdefghijklmnopqrstuvwxyz";
+    let valuesuppercase= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let values = "";
+
+    if (uppercase) {
+        values = values + valuesuppercase
+    }
+    if (lowercase) {
+        values = values + valueslowercase
+    }
+    if (numCharacters) {
+        values = values + valuesnumchars
+    }
+    if (specialCharacters) {
+        values = values + valuesspecialchars
+    }
+
 
     let password = "";
 
@@ -19,4 +37,17 @@ function Generate (){
     document.getElementById("display").value = password;
 
 }
+
+
+function myFunction() {
+
+        var copyText = document.getElementById("display");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+        alert("Copied the text: " + copyText.value);
+        
+}
+
+
 
